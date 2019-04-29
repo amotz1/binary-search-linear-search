@@ -65,7 +65,7 @@ def test_binary_search():
     test_case = [0, 1, 3, 4, 5, 6, 8, 9]
     list_of_numbers_to_search = [0, 1, 8, 5, 4, 8, 6, 3, 1]
     for number_to_search in list_of_numbers_to_search:
-        assert (binary_search(test_case, number_to_search))
+        assert binary_search(test_case, number_to_search)
     assert binary_search(test_case, 10) == False
 
 
