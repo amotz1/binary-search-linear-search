@@ -23,8 +23,8 @@ def test_linear_search():
     test_case = [4, 8, 9]
     list_of_numbers_to_search = [8, 4, 9]
     for number_to_search in list_of_numbers_to_search:
-        assert (linear_search(test_case, number_to_search) == test_case.index(number_to_search))
-    assert (linear_search(test_case, 3) == False)
+        assert linear_search(test_case, number_to_search) == test_case.index(number_to_search)
+    assert linear_search(test_case, 3) == False
 
 
 test_linear_search()
@@ -48,7 +48,7 @@ def __binary_search(list, start, end, number_to_search):
 
     else:
         return __binary_search(list, start, math.floor(mid) - 1, number_to_search)
-    assert (False)
+    assert False
 
 
 # this is the public function. it gets a sorted list and it then use the __binary_search function with it and the arguments 0 to len(sorted_list)-1.
