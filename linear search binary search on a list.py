@@ -18,6 +18,7 @@ def test_linear_search():
     list_of_numbers_to_search = [8, 4, 9, 0]
     for number_to_search in list_of_numbers_to_search:
         assert linear_search(test_case, number_to_search) == test_case.index(number_to_search)
+        assert linear_search(test_case, 10) == -1
 
 
 test_linear_search()
@@ -28,9 +29,9 @@ test_linear_search()
 def __binary_search(list, start, end, number_to_search):
     mid = math.floor((start + end) / 2)
     if end == start and list[mid] != number_to_search:
-        return False
+        return -1
     elif list[mid] == number_to_search:
-        return True
+        return mid
     elif list[mid] < number_to_search:
         return __binary_search(list, mid + 1, end, number_to_search)
     else:
@@ -51,14 +52,14 @@ def test_binary_search():
     test_case = [0, 1, 3, 4, 5, 6, 8, 9]
     list_of_numbers_to_search = [0, 1, 8, 5, 4, 8, 6, 3, 1]
     for number_to_search in list_of_numbers_to_search:
-        assert binary_search(test_case, number_to_search)
-    assert binary_search(test_case, 10) == False
+        assert binary_search(test_case, number_to_search) == test_case.index(number_to_search)
+    assert binary_search(test_case, 10) == -1
 
 
 test_binary_search()
 
 
-# i dont really understand why on line 64 it goes to if else clause, but it seems from line 67 that my function return 0 as it should i think.
+#TODO(yotam): i still am a little bit bewildered here as you saw in the comment
 def yotam_test():
     list = [0, 1, 2]
     if linear_search(list, 0):
